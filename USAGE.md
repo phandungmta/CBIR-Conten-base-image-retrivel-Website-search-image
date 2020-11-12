@@ -73,7 +73,7 @@ python3 src/resnet.py
 ```
 
 #### Indexing for the feature vector 
-You need to install  <a href="https://github.com/yahoojapan/NGT/wiki/Python-Quick-Start">NGT</a> to run the code 
+You need to install  <a href="https://github.com/yahoojapan/NGT/wiki/Python-Quick-Start">NGT</a> and get feature images before to run the code 
 
 ```python
 python3 src/NGT.py
@@ -92,13 +92,13 @@ the intro of these parts will be written further in the future :D
 ### Appendix: feature fusion
 I implement the basic feature fusion method -- concatenation.
 
-Codes for feature fusion is written in [fusion.py](https://github.com/pochih/CBIR/blob/master/src/fusion.py)
+Codes for feature fusion is written in [fusion.py](https://github.com/phandungmta/CBIR-Conten-base-image-retrivel-Website-search-imageblob/master/src/fusion.py)
 
 In fusion.py, there is a class called *FeatureFusion*.
 
 You can create a *FeatureFusion* instance with an argument called **features**.
 
-For example, in [fusion.py line140](https://github.com/pochih/CBIR/blob/master/src/fusion.py#L140)
+For example, in [fusion.py line140](https://github.com/phandungmta/CBIR-Conten-base-image-retrivel-Website-search-imageblob/master/src/fusion.py#L140)
 ```python
 fusion = FeatureFusion(features=['color', 'daisy'])
 APs = evaluate_class(db, f_instance=fusion, d_type=d_type, depth=depth)
@@ -106,7 +106,7 @@ APs = evaluate_class(db, f_instance=fusion, d_type=d_type, depth=depth)
 - The first line means to concatenate color featrue and daisy feature.
 - The second line means to evaluate with the concatenated feature.
 
-If you want to know the performance of all possible feature combination, look at [fusion.py line122](https://github.com/pochih/CBIR/blob/master/src/fusion.py#L122) for example
+If you want to know the performance of all possible feature combination, look at [fusion.py line122](https://github.com/phandungmta/CBIR-Conten-base-image-retrivel-Website-search-imageblob/master/src/fusion.py#L122) for example
 ```python
 evaluate_feats(db, N=2, d_type='d1')
 ```
