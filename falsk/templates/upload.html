@@ -1,0 +1,58 @@
+<!doctype html>
+
+<head>
+
+    <title>JS Bin</title>
+    <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+</head>
+<title>Python Flask File Upload Example</title>
+<h2>Select a file to upload</h2>
+<p>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+</p>
+{% if filename %}
+<div>
+
+    <img src="" id="profile-img-tag" width="200px" />
+</div>
+{% endif %}
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+        <p>
+
+            <input type='file' name="file" id="profile-img" autocomplete="off" required>
+
+        </p>
+    </dl>
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>
+<script type="text/javascript">
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#profile-img-tag').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#profile-img").change(function () {
+        readURL(this);
+    });
+</script>

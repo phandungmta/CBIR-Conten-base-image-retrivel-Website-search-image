@@ -1,0 +1,106 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<!-- Custom Theme files -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css')}}" />
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+	<!-- Custom Theme files -->
+	<!--webfont-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/jquery.Jcrop.css')}}" />
+
+	<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="{{ url_for('static', filename='view/js/jquery-1.11.1.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='view/js/menu_jquery.js')}}"></script>
+</head>
+
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<h1><a href="#"></a>Photo Hub</a></h1>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+
+	<h2>Select an image file</h2>
+	<form method="post" action="/upload" enctype="multipart/form-data">
+		<p>
+			<input type="file" id="file-input" name="file" />
+		</p>
+
+
+
+		<h2>Result</h2>
+
+		<p id="actions" style="display: none;">
+			<button type="button" id="edit">Edit</button>
+			<button type="submit" id="crop">Crop</button>
+			<button type="reset" id="cancel">Cancel</button>
+			<button type="submit" id="submit">Submit</button>
+
+		</p>
+		<figure id="result">
+			<figcaption style="display: none;">
+				Loading images from File objects requires support for the
+				<a href="https://developer.mozilla.org/en-US/docs/Web/API/URL">URL</a>
+				or
+				<a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader">FileReader</a>
+				API.
+			</figcaption>
+		</figure>
+		<!-- <div id="meta" style="display: none;">
+			<h3>Image metadata</h3>
+			<figure id="thumbnail" style="display: none;"></figure>
+		</div> -->
+
+
+		<div class="grid_1" id="result1">
+
+		</div>
+	</form>
+
+	
+	
+	
+
+
+
+	<script src="{{ url_for('static', filename='js/vendor/canvas-to-blob.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/load-image.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/load-image-scale.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/load-image-meta.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/load-image-fetch.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/load-image-orientation.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/load-image-exif.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/load-image-exif-map.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/load-image-iptc.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/load-image-iptc-map.js')}}"></script>
+	<!--
+	      jQuery and Jcrop are not required by JavaScript Load Image,
+	      but included for the demo
+	    -->
+	<script src="{{ url_for('static', filename='js/vendor/jquery.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/vendor/jquery.Jcrop.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/demo/demo.js')}}"></script>
+	
+</body>
+
+</html>
